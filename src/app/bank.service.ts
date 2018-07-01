@@ -5,5 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class BankService {
 
-  constructor() { }
+  constructor() { };
+  
+  test() {
+    console.log("hello");
+  }
 }
