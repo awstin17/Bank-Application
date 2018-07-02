@@ -9,16 +9,16 @@ import { BankService } from './bank.service';
 })
 export class AppComponent {
   
-  constructor(private _service : BankService) {};
+  balance: number;
+  constructor(private _service : BankService) {
+    this.balance = this._service.balance;
+  };
   
   bankName = 'Bank of San Diego';
   
   testFunction() {
-  return this._service.test();
+  return this._service.deposit();
   }
-  
- 
-  
   
 }
 
