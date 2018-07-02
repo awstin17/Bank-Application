@@ -10,7 +10,7 @@ export class BankService {
   account: any = {
     fname: 'first name',
     lname: 'last name',
-    balanceTotal: 0.01,
+    balanceTotal: 0,
     address: {
       street: '1234 street st',
       city: 'city',
@@ -48,5 +48,26 @@ export class BankService {
   
   deposit20() {
     this.account.balanceTotal = this.account.balanceTotal + 20;
+  }
+  
+  withdraw20() {
+    this.account.balanceTotal = this.account.balanceTotal - 20;
+  }
+  
+  transactions() {
+    let section = document.getElementById('test');
+    section.innerHTML = "";
+  
+    for(let i = 0; i < this.account.transactions.length; i++) {
+      for(let property in this.account.transactions[i]) {
+        let variable = document.createTextNode(` ${property} : ${this.account.transactions[i][property]}`);
+        section.appendChild(variable);
+        section.appendChild(document.createElement("BR"));
+      
+        if(property === 'currency') {
+          section.appendChild(document.createElement("BR"));
+        }
+      }
+    }
   }
 }
