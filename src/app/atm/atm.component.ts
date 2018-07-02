@@ -8,12 +8,14 @@ import { BankService } from '../bank.service';
 })
 export class AtmComponent {
 
-balance: number;
+balanceTotal: number 0;
   constructor(private _service : BankService) {
-    this.balance = this._service.balance;
+    this.balanceTotal = this._service.balanceTotal;
   }
+  
+name: 'Austin';
 
 deposit() {
-  this.balance = this.balance + 20;
+  this._service.deposit2();
 }
 }

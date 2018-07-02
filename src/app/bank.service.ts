@@ -10,7 +10,7 @@ export class BankService {
   account: any = {
     fname: 'first name',
     lname: 'last name',
-    age: 0,
+    balanceTotal: 0.01,
     address: {
       street: '1234 street st',
       city: 'city',
@@ -18,7 +18,7 @@ export class BankService {
       zip: 12345,
       country: 'canada'
     },
-    balance: 0.01,
+    age: 0,
     currency: 'usd',
     transactions: [
       {
@@ -43,10 +43,16 @@ export class BankService {
   };
   
   test() {
-    return "wheeee";
+    alert('hello');
   }
   
   deposit() {
-    return this.balance = this.balance + 20;
+    this.account.balance = this.balance + 20;
+    // alert('hello');
+  }
+  
+  deposit2() {
+    this.account.balanceTotal = this.account.balanceTotal + 20;
+    alert(this.account.balanceTotal);
   }
 }

@@ -15,6 +15,7 @@ export class AppComponent {
   };
   
   bankName = 'Bank of San Diego';
+  name = 'Austin';
   
   testFunction() {
   return this._service.deposit();
