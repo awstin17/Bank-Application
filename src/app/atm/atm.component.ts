@@ -10,7 +10,7 @@ export class AtmComponent {
 
 
   constructor(private _service : BankService) {
-    this.balanceTotal = this._service.balanceTotal;
+    this.balanceTotal = this._service.account.balanceTotal;
   }
   
 balanceTotal: number = 0;  

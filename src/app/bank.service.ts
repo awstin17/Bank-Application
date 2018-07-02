@@ -46,10 +46,10 @@ export class BankService {
     alert('hello');
   }
   
-  deposit() {
-    this.account.balance = this.balance + 20;
-    // alert('hello');
-  }
+  // deposit() {
+  //   this.account.balance = this.balance + 20;
+  //   // alert('hello');
+  // }
   
   deposit2() {
     this.account.balanceTotal = this.account.balanceTotal + 20;
