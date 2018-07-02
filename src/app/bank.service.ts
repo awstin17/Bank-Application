@@ -8,6 +8,6 @@ export class BankService {
   constructor() { };
   
   test() {
-    console.log("hello");
+    return "wheeee";
   }
 }

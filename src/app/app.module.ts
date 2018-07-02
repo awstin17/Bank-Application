@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 
 import { routes } from './app.router';
 import { NavComponent } from './nav/nav.component';
+import { BankService } from './bank.service'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { NavComponent } from './nav/nav.component';
     BrowserModule,
     routes
   ],
-  providers: [],
+  providers: [BankService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
