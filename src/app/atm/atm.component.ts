@@ -10,14 +10,14 @@ export class AtmComponent {
 
 
   constructor(private _service : BankService) {
-    this.balanceTotal = this._service.account.balanceTotal;
+    this.balanceTotal = _service.account.balanceTotal;
   }
   
-balanceTotal: number = 0;  
-name: string = 'Austin';
+balanceTotal: number;  
 
 deposit() {
-  this._service.deposit2();
-  console.log(this.balanceTotal);
+  this._service.deposit20();
+  console.log(document.getElementById('test'));
+  document.getElementById('test').innerHTML = `Congrats, Henry! You successfuly deposited $20. <br> Your new balance is ${this._service.account.balanceTotal}`;
 }
 }
