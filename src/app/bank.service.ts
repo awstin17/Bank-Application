@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+// import { AtmComponent } from './atm/atm.component'
 
 @Injectable({
   providedIn: 'root'
@@ -48,14 +49,25 @@ export class BankService {
   
   deposit20() {
     this.account.balanceTotal = this.account.balanceTotal + 20;
+    document.getElementById('atmview').innerHTML = `Congrats, Henry! You successfuly deposited $20. <br> Your new balance is ${this.account.balanceTotal}`;
   }
   
   withdraw20() {
-    this.account.balanceTotal = this.account.balanceTotal - 20;
+    if(this.account.balanceTotal >= 20) {
+      this.account.balanceTotal = this.account.balanceTotal - 20;
+      document.getElementById('atmview').innerHTML = `Congrats, Henry! You successfuly withdrew $20. <br> Your new balance is ${this.account.balanceTotal}`;
+    }
+    else {
+      document.getElementById('atmview').innerHTML = "You ain't got cash, punk. Now SCRAM";
+    }
   }
   
+  balance() {
+  document.getElementById('atmview').innerHTML = `Your account balance is ${this.account.balanceTotal}`;
+  }
+
   transactions() {
-    let section = document.getElementById('test');
+    let section = document.getElementById('atmview');
     section.innerHTML = "";
   
     for(let i = 0; i < this.account.transactions.length; i++) {
