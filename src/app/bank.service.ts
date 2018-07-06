@@ -47,9 +47,19 @@ export class BankService {
     alert('hello');
   }
   
-  deposit20() {
+  deposit20(a) {
+    
     this.account.balanceTotal = this.account.balanceTotal + 20;
-    document.getElementById('atmview').innerHTML = `Congrats, Henry! You successfuly deposited $20. <br> Your new balance is ${this.account.balanceTotal}`;
+    
+    if(a === 1) {
+    document.getElementById('view').innerHTML = `Congrats, Henry! You successfuly deposited $20. <br> Your new balance is ${this.account.balanceTotal}`;
+    }
+  
+    else {
+    let tellerDeposit = document.getElementsByTagName("p")[0];
+    tellerDeposit.innerHTML = `Congrats teller, you successfully deposited $20 to Henry's account. <br> Their new balance is ${this.account.balanceTotal}`;
+    console.log("this is running");
+    }
   }
   
   withdraw20() {
@@ -63,11 +73,11 @@ export class BankService {
   }
   
   balance() {
-  document.getElementById('atmview').innerHTML = `Your account balance is ${this.account.balanceTotal}`;
+  document.getElementById('view').innerHTML = `Your account balance is ${this.account.balanceTotal}`;
   }
 
   transactions() {
-    let section = document.getElementById('atmview');
+    let section = document.getElementById('view');
     section.innerHTML = "";
   
     for(let i = 0; i < this.account.transactions.length; i++) {

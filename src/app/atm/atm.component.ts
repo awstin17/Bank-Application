@@ -12,7 +12,7 @@ export class AtmComponent {
   constructor(private _service : BankService) {}
 
   deposit() {
-    this._service.deposit20();
+    this._service.deposit20(1);
   }
 
   withdraw() {

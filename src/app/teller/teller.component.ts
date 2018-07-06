@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BankService} from '../bank.service';
 
 @Component({
   selector: 'app-teller',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class TellerComponent {
 
-  constructor() { }
+  constructor(private _service : BankService) { }
+  
+  deposit() {
+    this._service.deposit20(0);
+  }
+
+  withdraw() {
+    this._service.withdraw20();
+  }
+  
+  transactions() {
+    this._service.transactions();
+  }
 
 }
