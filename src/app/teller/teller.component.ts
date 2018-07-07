@@ -15,11 +15,11 @@ export class TellerComponent {
   }
 
   withdraw() {
-    this._service.withdraw20();
+    this._service.withdraw20(0);
   }
   
   transactions() {
-    this._service.transactions();
+    this._service.transactions(0);
   }
 
 }

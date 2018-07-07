@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AtmComponent } from './atm/atm.component';
@@ -20,7 +21,8 @@ import { BankService } from './bank.service'
   ],
   imports: [
     BrowserModule,
-    routes
+    routes,
+    FormsModule
   ],
   providers: [BankService],
   bootstrap: [AppComponent]

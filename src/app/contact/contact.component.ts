@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BankService } from '../bank.service'
 
 @Component({
   selector: 'app-contact',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
-  constructor() { }
+  constructor(private _service : BankService) { }
   
+  submit() {
+    this._service.submit();
+  }
 }

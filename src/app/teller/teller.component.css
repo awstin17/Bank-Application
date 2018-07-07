@@ -24,3 +24,7 @@
 .options-item {
 
 }
+
+.disappear {
+  display: none;
+}

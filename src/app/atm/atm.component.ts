@@ -16,7 +16,7 @@ export class AtmComponent {
   }
 
   withdraw() {
-    this._service.withdraw20();
+    this._service.withdraw20(1);
   }
   
   balance() {
@@ -24,6 +24,6 @@ export class AtmComponent {
   }
   
   transactions() {
-    this._service.transactions();
+    this._service.transactions(1);
   }
 }
