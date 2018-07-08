@@ -2,7 +2,7 @@
 <div class="main">
   <section class="display" id="tellerview">
     <!-- Display: Customer information except for when inquiring about transaction -->
-    <p id = "transactions"></p>
+    <p id = "transactions" *ngFor = "let transaction of _service.account.transactions"> {{transaction.date}} {{transaction.type}} ${{transaction.amount}} {{transaction.currency}} </p>
     <span id = "customerinfo">
     <p id="beforeinformation"></p>
     <h3>Customer Information</h3>

@@ -57,36 +57,35 @@ export class BankService {
     }
   
     else {
-    document.getElementById('customerinfo').classList.remove("disappear");
-    document.getElementById('transactions').classList.add("disappear");
+    // document.getElementById('customerinfo').classList.remove("disappear");
+    // document.getElementById('transactions').classList.add("disappear");
     document.getElementById("beforeinformation").innerHTML = `Congrats teller, you successfully deposited $20 to Henry's account. <br> Their new balance is ${this.account.balanceTotal}`;
     }
   }
   
   withdraw20(b) {
       
-      if(b === 0 && this.account.balanceTotal >=20) {
-        this.account.balanceTotal = this.account.balanceTotal - 20;
-        document.getElementById('customerinfo').classList.remove("disappear");
-        document.getElementById('transactions').classList.add("disappear");
-        document.getElementById("beforeinformation").innerHTML =  `Congrats, teller, you successfuly withdrew $20 from Henry's account. <br> Their new balance is ${this.account.balanceTotal}`;
-      }  
-      
-      else if(b ===0) {
-        document.getElementById('customerinfo').classList.remove("disappear");
-        document.getElementById('transactions').classList.add("disappear");
-        document.getElementById("beforeinformation").innerHTML = "This punk don't got cash. Kick 'em out!";
-      }
-      
-      if(b === 1 && this.account.balanceTotal >=20) {
-        this.account.balanceTotal = this.account.balanceTotal - 20;
-        document.getElementById("atmview").innerHTML = `Congrats, Henry! You successfuly withdrew $20. <br> Your new balance is ${this.account.balanceTotal}`;
-      }
-       
-      else if(b === 1) {
-        document.getElementById('atmview').innerHTML = "You ain't got cash, punk. Now SCRAM";
-      }
-    
+        if(b === 0 && this.account.balanceTotal >=20) {
+          this.account.balanceTotal = this.account.balanceTotal - 20;
+          // document.getElementById('customerinfo').classList.remove("disappear");
+          // document.getElementById('transactions').classList.add("disappear");
+          document.getElementById("beforeinformation").innerHTML =  `Congrats, teller, you successfuly withdrew $20 from Henry's account. <br> Their new balance is ${this.account.balanceTotal}`;
+        }  
+        
+        else if(b ===0) {
+          // document.getElementById('customerinfo').classList.remove("disappear");
+          // document.getElementById('transactions').classList.add("disappear");
+          document.getElementById("beforeinformation").innerHTML = "This punk don't got cash. Kick 'em out!";
+        }
+        
+        if(b === 1 && this.account.balanceTotal >=20) {
+          this.account.balanceTotal = this.account.balanceTotal - 20;
+          document.getElementById("atmview").innerHTML = `Congrats, Henry! You successfuly withdrew $20. <br> Your new balance is ${this.account.balanceTotal}`;
+        }
+         
+        else if(b === 1) {
+          document.getElementById('atmview').innerHTML = "You ain't got cash, punk. Now SCRAM";
+        }
   }
   
   balance() {
@@ -95,32 +94,32 @@ export class BankService {
 
   transactions(c) {
     
-    let section;
+    // let section;
     
-    if(c === 1) {
-    section = document.getElementById('atmview');
-    }
+    // if(c === 1) {
+    // section = document.getElementById('atmview');
+    // }
     
-    else {
-      section = document.getElementById('transactions');
-      section.classList.remove("disappear");
-      let customerInfo = document.getElementById('customerinfo');
-      customerInfo.classList.add("disappear");
-    }
+    // else {
+    //   section = document.getElementById('transactions');
+    //   // section.classList.remove("disappear");
+    //   let customerInfo = document.getElementById('customerinfo');
+    //   // customerInfo.classList.add("disappear");
+    // }
     
-    section.innerHTML = "";
+    // section.innerHTML = "";
   
-    for(let i = 0; i < this.account.transactions.length; i++) {
-      for(let property in this.account.transactions[i]) {
-        let variable = document.createTextNode(` ${property} : ${this.account.transactions[i][property]}`);
-        section.appendChild(variable);
-        section.appendChild(document.createElement("BR"));
+    // for(let i = 0; i < this.account.transactions.length; i++) {
+    //   for(let property in this.account.transactions[i]) {
+    //     let variable = document.createTextNode(` ${property} : ${this.account.transactions[i][property]}`);
+    //     section.appendChild(variable);
+    //     section.appendChild(document.createElement("BR"));
       
-        if(property === 'currency') {
-          section.appendChild(document.createElement("BR"));
-        }
-      }
-    }
+    //     if(property === 'currency') {
+    //       section.appendChild(document.createElement("BR"));
+    //     }
+    //   }
+    // }
   }
   
   submit() {

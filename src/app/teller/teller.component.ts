@@ -16,6 +16,7 @@ export class TellerComponent {
 
   withdraw() {
     this._service.withdraw20(0);
+    this._service.withdraw20(0);
   }
   
   transactions() {
