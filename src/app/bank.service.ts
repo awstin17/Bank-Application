@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { AtmComponent } from './atm/atm.component'
+import { Router } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { ContactComponent } from './contact/contact.component';
 })
 export class BankService {
 
-  constructor() { };
+  constructor(private router : Router) { };
   
   account: any = {
     fname: 'first name',
@@ -45,6 +45,8 @@ export class BankService {
   };
   
   name: string = "";
+  email: string = "";
+  message: string = "";
   
   deposit20(a) {
     
@@ -122,6 +124,12 @@ export class BankService {
   }
   
   submit() {
-    alert(`name = ${this.name}`);
+    alert(`name = ${this.name}
+email = ${this.email}
+message = ${this.message}
+
+Everything submitted properly :). We'll get back to you as soon as we can!`);
+
+this.router.navigate([`./atm`]);
   }
 }

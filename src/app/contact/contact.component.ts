@@ -10,7 +10,7 @@ export class ContactComponent {
 
   constructor(private _service : BankService) { }
   
-  submit() {
-    this._service.submit();
-  }
+  // submit() {
+  //   this._service.submit();
+  // }
 }

@@ -11,10 +11,10 @@
     <aside>
         <h1> Contact Form </h1>
         <form>
-            Name: <input/> 
-            Email: <input/>
-            Message: <input/>
-            <input (click) = "submit()" type = "submit" value ="Submit"/>
+            Name: <input [(ngModel)] = "_service.name" name = "name" autocomplete = "name"/> <p> {{_service.name}} </p>
+            Email: <input [(ngModel)] = "_service.email" name = "email" autocomplete = "email"/> <p> {{_service.email}} </p>
+            Message: <input [(ngModel)] = "_service.message" name = "message" autocomplete = "message"/> <p> {{_service.message}} </p>
+            <input (click) = "_service.submit()" type = "submit" value ="Submit"/>
         </form>
     </aside>
     
