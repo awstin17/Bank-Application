@@ -10,17 +10,9 @@ export class TellerComponent {
 
   constructor(private _service : BankService) { }
   
-  deposit() {
-    this._service.deposit20(0);
-  }
-
-  withdraw() {
-    this._service.withdraw20(0);
-    this._service.withdraw20(0);
-  }
-  
   transactions() {
-    this._service.transactions(0);
+    this._service.transactions();
+    document.getElementById("customerinfo").style.display = 'none';
   }
 
 }

@@ -1,23 +1,31 @@
 <h1>ATM View</h1>
 <div class="main">
-  <section class="display" id="atmview">
+  <section class="display">
     Hello Henry
     <!-- Display Feedback information here -->
+    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, Henry, you successfuly deposited $20 from your account. <br> Your new balance is {{this._service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, Henry, you successfuly withdrew $20 from your account. <br> Your new balance is {{this._service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'nomoney'"> If ya ain't got cash I ain't got time for you </p>
+    <p *ngIf = "this._service.makeAppear === 'balance'"> Your account balance is {{this._service.account.balanceTotal}} </p>
+    <div *ngIf = "this._service.makeAppear === 'transactions'"> <br> Transactions: <br><br>
+    <p *ngFor = "let transaction of _service.account.transactions"> {{transaction.date}} {{transaction.type}} ${{transaction.amount}} {{transaction.currency}} </p>
+    </div>
+    
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button (click) = "withdraw()">Make a Widthdrawal</button>
+        <button (click) = "this._service.withdraw20()">Make a Widthdrawal</button>
       </li>
       <li class="options-item">
-        <button (click) = "deposit()">Deposit Money</button>
+        <button (click) = "this._service.deposit20()">Deposit Money</button>
       </li>
       <li class="options-item">
-        <button (click) = "balance()">Balance Inquiry</button>
+        <button (click) = "this._service.balance()">Balance Inquiry</button>
       </li>
       <li class="options-item">
-        <button (click) = "transactions()">Transactions History</button>
+        <button (click) = "this._service.transactions()">Transactions History</button>
       </li>
     </ul>
   </aside>
