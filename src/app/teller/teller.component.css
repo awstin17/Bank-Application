@@ -8,13 +8,16 @@
 }
 
 .display {
-  flex-basis: 50vw;
+  flex-basis: 75vw;
   background-color: darkslategrey;
   color: white;
 }
 
 .options {
-  flex-basis: 50vw;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  flex-basis: 25vw;
 }
 
 .options-list {
@@ -23,8 +26,4 @@
 
 .options-item {
 
-}
-
-.disappear {
-  display: none;
 }

@@ -67,10 +67,6 @@ export class BankService {
   }
   
   const balance = () => this.makeAppear = "balance";
-
-  // transactions() {
-  //   this.makeAppear = "transactions";
-  // }
   
   const transactions = () => this.makeAppear = "transactions";
   
@@ -82,5 +78,9 @@ message = ${this.message}
 Everything submitted properly :). We'll get back to you as soon as we can!`);
 
 this.router.navigate([`./atm`]);
+  }
+  
+  reset() {
+    this.makeAppear = "";
   }
 }
