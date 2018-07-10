@@ -66,13 +66,13 @@ export class BankService {
     }
   }
   
-  balance() {
-    this.makeAppear = "balance"
-  }
+  const balance = () => this.makeAppear = "balance";
 
-  transactions() {
-    this.makeAppear = "transactions";
-  }
+  // transactions() {
+  //   this.makeAppear = "transactions";
+  // }
+  
+  const transactions = () => this.makeAppear = "transactions";
   
   submit() {
     alert(`name = ${this.name}
