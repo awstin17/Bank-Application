@@ -66,21 +66,23 @@ export class BankService {
     }
   }
   
-  const balance = () => this.makeAppear = "balance";
+  balance() { this.makeAppear = "balance";
+  }
   
-  const transactions = () => this.makeAppear = "transactions";
+  transactions() { this.makeAppear = "transactions";
+  }
   
   submit() {
     alert(`name = ${this.name}
 email = ${this.email}
 message = ${this.message}
 
-Everything submitted properly :). We'll get back to you as soon as we can!`);
+// Everything submitted properly :). We'll get back to you as soon as we can!`);
 
 this.router.navigate([`./atm`]);
   }
   
-  reset() {
+  resetMakeAppear() {
     this.makeAppear = "";
   }
 }

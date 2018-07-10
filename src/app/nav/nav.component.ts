@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BankService } from '../bank.service';
+
 
 @Component({
   selector: 'app-nav',
@@ -7,6 +9,6 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
-  constructor() { }
+  constructor(private _service : BankService) { }
 
 }

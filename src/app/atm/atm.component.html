@@ -3,10 +3,10 @@
   <section class="display">
     Hello Henry
     <!-- Display Feedback information here -->
-    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, Henry, you successfuly deposited $20 from your account. <br> Your new balance is {{this._service.account.balanceTotal}}</p>
-    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, Henry, you successfuly withdrew $20 from your account. <br> Your new balance is {{this._service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, Henry, you successfuly deposited $20 from your account. <br> Your new balance is {{_service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, Henry, you successfuly withdrew $20 from your account. <br> Your new balance is {{_service.account.balanceTotal}}</p>
     <p *ngIf = "this._service.makeAppear === 'nomoney'"> If ya ain't got cash I ain't got time for you </p>
-    <p *ngIf = "this._service.makeAppear === 'balance'"> Your account balance is {{this._service.account.balanceTotal}} </p>
+    <p *ngIf = "this._service.makeAppear === 'balance'"> Your account balance is {{_service.account.balanceTotal}} </p>
     <div *ngIf = "this._service.makeAppear === 'transactions'"> <br> Transactions: <br><br>
     <p *ngFor = "let transaction of _service.account.transactions"> {{transaction.date}} {{transaction.type}} ${{transaction.amount}} {{transaction.currency}} </p>
     </div>

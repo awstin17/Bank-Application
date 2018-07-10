@@ -4,6 +4,6 @@
     {{ bankName }}
   </h1>
   <app-nav></app-nav>
-  <router-outlet></router-outlet>
+  <router-outlet (activate)="_service.resetMakeAppear()"></router-outlet>
 </div>
 
