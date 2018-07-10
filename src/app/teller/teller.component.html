@@ -2,8 +2,8 @@
 <div class="main">
   <section class="display" id="tellerview">
     <!-- Display: Customer information except for when inquiring about transaction -->
-    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, teller, you successfuly deposited $20 from Henry's account. <br> Their new balance is {{this._service.account.balanceTotal}}</p>
-    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, teller, you successfuly withdrew $20 from Henry's account. <br> Their new balance is {{this._service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, teller, you successfuly deposited ${{_service.depositAmount}} from Henry's account. <br> Their new balance is {{this._service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, teller, you successfuly withdrew ${{_service.withdrawAmount}}. <br> Their new balance is {{this._service.account.balanceTotal}}</p>
     <p *ngIf = "this._service.makeAppear === 'nomoney'"> This kid doesn't have money! Kick 'em out! </p>
     
     <span id = "customerinfo">
@@ -32,9 +32,11 @@
     <ul class="options-list">
       <li class="options-item">
         <button (click) = "withdraw()">Widthdrawal for Customer</button>
+        <input [(ngModel)] = "_service.withdrawAmount" name = "amount" type = "number"> 
       </li>
       <li class="options-item">
         <button (click) = "deposit()">Deposit for Customer</button>
+        <input [(ngModel)] = "_service.depositAmount" name = "amount2" type = "number">
       </li>
       <li class="options-item">
         <button (click) = "transactions()">Customer Transaction History</button>

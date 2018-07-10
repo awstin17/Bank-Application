@@ -44,6 +44,8 @@ export class BankService {
     ]
   };
   
+  withdrawAmount: number;
+  depositAmount: number;
   name: string = "";
   email: string = "";
   message: string = "";
@@ -51,14 +53,14 @@ export class BankService {
   
   deposit20() {
     this.makeAppear = "deposit";
-    this.account.balanceTotal = this.account.balanceTotal + 20;
+    this.account.balanceTotal = this.account.balanceTotal + this.depositAmount;
   }
   
   withdraw20() {
     
-    if(this.account.balanceTotal >=20) {
+    if(this.account.balanceTotal >= this.withdrawAmount) {
     this.makeAppear = "withdraw";
-    this.account.balanceTotal = this.account.balanceTotal - 20;
+    this.account.balanceTotal = this.account.balanceTotal - this.withdrawAmount;
     }
         
     else {
@@ -84,5 +86,7 @@ this.router.navigate([`./atm`]);
   
   resetMakeAppear() {
     this.makeAppear = "";
+    this.depositAmount = 0;
+    this.withdrawAmount = 0;
   }
 }

@@ -3,8 +3,8 @@
   <section class="display">
     Hello Henry
     <!-- Display Feedback information here -->
-    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, Henry, you successfuly deposited $20 from your account. <br> Your new balance is {{_service.account.balanceTotal}}</p>
-    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, Henry, you successfuly withdrew $20 from your account. <br> Your new balance is {{_service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, Henry, you successfuly deposited ${{_service.depositAmount}}. <br> Your new balance is {{_service.account.balanceTotal}}</p>
+    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, Henry, you successfuly withdrew ${{_service.withdrawAmount}} from your account. <br> Your new balance is {{_service.account.balanceTotal}}</p>
     <p *ngIf = "this._service.makeAppear === 'nomoney'"> If ya ain't got cash I ain't got time for you </p>
     <p *ngIf = "this._service.makeAppear === 'balance'"> Your account balance is {{_service.account.balanceTotal}} </p>
     <div *ngIf = "this._service.makeAppear === 'transactions'"> <br> Transactions: <br><br>
@@ -17,9 +17,11 @@
     <ul class="options-list">
       <li class="options-item">
         <button (click) = "this._service.withdraw20()">Make a Widthdrawal</button>
+        <input [(ngModel)] = "_service.withdrawAmount" name = "amount" type = "number">
       </li>
       <li class="options-item">
         <button (click) = "this._service.deposit20()">Deposit Money</button>
+        <input [(ngModel)] = "_service.depositAmount" name = "amount2" type = "number">
       </li>
       <li class="options-item">
         <button (click) = "this._service.balance()">Balance Inquiry</button>
