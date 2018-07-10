@@ -46,6 +46,7 @@ export class BankService {
   
   withdrawAmount: number;
   depositAmount: number;
+  displayAmount: number;
   name: string = "";
   email: string = "";
   message: string = "";
@@ -54,6 +55,7 @@ export class BankService {
   deposit20() {
     this.makeAppear = "deposit";
     this.account.balanceTotal = this.account.balanceTotal + this.depositAmount;
+    this.displayAmount = this.depositAmount;
   }
   
   withdraw20() {
@@ -61,6 +63,7 @@ export class BankService {
     if(this.account.balanceTotal >= this.withdrawAmount) {
     this.makeAppear = "withdraw";
     this.account.balanceTotal = this.account.balanceTotal - this.withdrawAmount;
+    this.displayAmount = this.withdrawAmount;
     }
         
     else {

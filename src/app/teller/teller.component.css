@@ -1,29 +1,62 @@
+* { border: 1px solid black; }
+
 .balance {
   display: block;
+  height: 20%;
 }
 
 .main {
   display: flex;
   flex-flow: row nowrap;
+  height: 35vw;
+  
 }
 
 .display {
   flex-basis: 75vw;
   background-color: darkslategrey;
   color: white;
+  height: 100%;
 }
 
 .options {
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-basis: 25vw;
+    border: 1px solid black;
+
 }
 
 .options-list {
   list-style: none;
+  border: 1px solid black;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  bottom: 18px;
 }
 
 .options-item {
+  margin: auto;
+ width: 100%;
+ height: 33%;
+ border: 1px solid black;
+}
 
+button, input {
+  width: 100%;
+}
+
+#withdrawview, #depositview {
+  height: 50%;
+}
+
+input {
+  height: 50%;
+  text-align: center;
+}
+
+#transactionslist {
+  height: 100%;
 }
