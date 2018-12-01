@@ -9,7 +9,7 @@ import { BankService } from './bank.service';
 })
 export class AppComponent {
   
-  constructor(private _service : BankService) {
+  constructor(public _service : BankService) {
   };
   
   bankName = 'Bank of Austin';
