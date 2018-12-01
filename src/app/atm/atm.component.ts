@@ -9,6 +9,6 @@ import { BankService } from '../bank.service';
 export class AtmComponent {
 
 
-  constructor(private _service : BankService) {}
+  constructor(public _service : BankService) {}
 
 }

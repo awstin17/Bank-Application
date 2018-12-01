@@ -8,7 +8,7 @@ import { BankService } from '../bank.service'
 })
 export class ContactComponent {
 
-  constructor(private _service : BankService) { }
+  constructor(public _service : BankService) { }
   
   // submit() {
   //   this._service.submit();
