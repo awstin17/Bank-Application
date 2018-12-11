@@ -1,34 +1,36 @@
 <h1>ATM View</h1>
 <div class="main">
   <section class="display">
-    Hello Henry
+    <h1>Hello Henry</h1>
     <!-- Display Feedback information here -->
     <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, Henry, you successfuly deposited ${{_service.displayAmount}}. <br> Your new balance is {{_service.account.balanceTotal}}</p>
     <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, Henry, you successfuly withdrew ${{_service.displayAmount}} from your account. <br> Your new balance is {{_service.account.balanceTotal}}</p>
     <p *ngIf = "this._service.makeAppear === 'nomoney'"> If ya ain't got cash I ain't got time for you </p>
     <p *ngIf = "this._service.makeAppear === 'balance'"> Your account balance is ${{_service.account.balanceTotal}} </p>
     <div *ngIf = "this._service.makeAppear === 'transactions'"> <br> Transactions: <br><br>
-    <p *ngFor = "let transaction of _service.account.transactions"> {{transaction.date}} {{transaction.type}} ${{transaction.amount}} {{transaction.currency}} </p>
+    <p *ngFor = "let transaction of _service.account.transactions"> 
+      <h1> Feature coming soon! </h1>
+      <!-- {{transaction.date}} {{transaction.type}} ${{transaction.amount}} {{transaction.currency}} </p> -->
     </div>
     
   </section>
-  <aside class="options">
+  <div class="optionsContainer">
     <!-- Add functionality to the buttons below -->
-    <ul class="options-list">
-      <li class="options-item">
-        <button (click) = "this._service.withdraw20()">Make a Widthdrawal</button>
-        <input [(ngModel)] = "_service.withdrawAmount" name = "amount" type = "number">
-      </li>
-      <li class="options-item">
-        <button (click) = "this._service.deposit20()">Deposit Money</button>
-        <input [(ngModel)] = "_service.depositAmount" name = "amount2" type = "number">
-      </li>
-      <li class="options-item">
-        <button (click) = "this._service.balance()">Balance Inquiry</button>
-      </li>
-      <li class="options-item">
-        <button (click) = "this._service.transactions()">Transactions History</button>
-      </li>
-    </ul>
-  </aside>
+    <!-- <ul class="options-list">
+      <li class="options-item"> -->
+        <button class="options" (click) = "this._service.withdraw20()">Make a Widthdrawal</button>
+        <input class="options" [(ngModel)] = "_service.withdrawAmount" name = "amount" type = "number">
+      <!-- </li>
+      <li class="options-item"> -->
+        <button class="options" (click) = "this._service.deposit20()">Deposit Money</button>
+        <input class="options" [(ngModel)] = "_service.depositAmount" name = "amount2" type = "number">
+      <!-- </li>
+      <li class="options-item"> -->
+        <button class="options" (click) = "this._service.balance()">Balance Inquiry</button>
+      <!-- </li>
+      <li class="options-item"> -->
+        <button class="options" (click) = "this._service.transactions()">Transactions History</button>
+      <!-- </li>
+    </ul> -->
+  </div>
 </div>

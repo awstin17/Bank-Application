@@ -2,45 +2,52 @@
 <div class="main">
   <section class="display" id="tellerview">
     <!-- Display: Customer information except for when inquiring about transaction -->
-    <p *ngIf = "this._service.makeAppear === 'deposit'"> Congrats, teller, you successfuly deposited ${{_service.displayAmount}} from Henry's account. <br> Their new balance is ${{this._service.account.balanceTotal}}</p>
-    <p *ngIf = "this._service.makeAppear === 'withdraw'"> Congrats, teller, you successfuly withdrew ${{_service.displayAmount}}. <br> Their new balance is ${{this._service.account.balanceTotal}}</p>
-    <p *ngIf = "this._service.makeAppear === 'nomoney'"> This kid doesn't have money! Kick 'em out! </p>
-    
-    <span id = "customerinfo">
-    <p id="beforeinformation"></p>
-    <h3>Customer Information</h3>
-    <p>Customer Name: Henry Poorasdirt</p>
-    <p>Age: 100</p>
-    <p>Address: 1234 Test Lane.<br>
-      San Diego, CA 92000<br>
-      United States
-    </p>
-    <br><br>
+    <p *ngIf="this._service.makeAppear === 'deposit'"> Congrats, teller, you successfuly deposited
+      ${{_service.displayAmount}} from Henry's account. <br> Their new balance is
+      ${{this._service.account.balanceTotal}}</p>
+    <p *ngIf="this._service.makeAppear === 'withdraw'"> Congrats, teller, you successfuly withdrew
+      ${{_service.displayAmount}}. <br> Their new balance is ${{this._service.account.balanceTotal}}</p>
+    <p *ngIf="this._service.makeAppear === 'nomoney'"> This kid doesn't have money! Kick 'em out! </p>
+
+    <span id="customerinfo">
+      <p id="beforeinformation"></p>
+      <h3>Customer Information</h3>
+      <p>Customer Name: Henry Poorasdirt</p>
+      <p>Age: 100</p>
+      <p>Address: 1234 Test Lane.<br>
+        San Diego, CA 92000<br>
+        United States
+      </p>
+      <br><br>
     </span>
     <!-- Display: if inquiring about transactions -->
-    <div *ngIf = "this._service.makeAppear === 'transactions'"> <br> Transactions: <br><br>
-    <p id = "transactions" *ngFor = "let transaction of _service.account.transactions"> {{transaction.date}} {{transaction.type}} ${{transaction.amount}} {{transaction.currency}} </p>
+    <div *ngIf="this._service.makeAppear === 'transactions'"> <br> Transactions: <br><br>
+      <!-- <p id="transactions" *ngFor="let transaction of _service.account.transactions"> {{transaction.date}}
+        {{transaction.type}} ${{transaction.amount}} {{transaction.currency}} </p> -->
+        <h1>Feature coming soon!</h1>
     </div>
-    
+
   </section>
-  <aside class="options">
-    <!--<section class="balance">-->
-      <!-- Display customer balance -->
-    <!--   ${{this._service.account.balanceTotal}}-->
-    <!--</section>-->
-    <!-- Add functionality to the buttons below -->
-    <ul class="options-list">
-      <li class="options-item">
-        <button (click) = "withdraw()" id="withdrawview">Widthdrawal for Customer</button>
-        <input [(ngModel)] = "_service.withdrawAmount" name = "amount" type = "number"> 
-      </li>
-      <li class="options-item">
-        <button (click) = "deposit()" id="depositview">Deposit for Customer</button> <br>
-        <input [(ngModel)] = "_service.depositAmount" name = "amount2" type = "number">
-      </li>
-      <li class="options-item">
-        <button (click) = "transactions()" id="transactionslist">Customer Transaction History</button>
-      </li>
-    </ul>
-  </aside>
+  <!-- <aside class="options"> -->
+  <!--<section class="balance">-->
+  <!-- Display customer balance -->
+  <!--   ${{this._service.account.balanceTotal}}-->
+  <!--</section>-->
+  <!-- Add functionality to the buttons below -->
+  <!-- <ul class="options-list">
+      <li class="options-item"> -->
+  <div style="display: flex; flex-direction: column; width: 30%">
+    <button class="options" (click)="withdraw()" id="withdrawview">Widthdrawal for Customer</button>
+    <input class="options" [(ngModel)]="_service.withdrawAmount" name="amount" type="number">
+    <!-- </li>
+      <li class="options-item"> -->
+    <button class="options" (click)="deposit()" id="depositview">Deposit for Customer</button> 
+    <input class="options" [(ngModel)]="_service.depositAmount" name="amount2" type="number">
+    <!-- </li>
+      <li class="options-item"> -->
+    <button class="options" (click)="transactions()" id="transactionslist">Customer Transaction History</button>
+    <!-- </li>
+    </ul> -->
+    <!-- </aside> -->
+  </div>
 </div>

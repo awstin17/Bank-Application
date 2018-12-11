@@ -1,4 +1,4 @@
-* { border: 1px solid black; }
+/* * { border: 1px solid black; } */
 
 .balance {
   display: block;
@@ -8,7 +8,7 @@
 .main {
   display: flex;
   flex-flow: row nowrap;
-  height: 35vw;
+  height: 300px;
   
 }
 
@@ -20,28 +20,26 @@
 }
 
 .options {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   flex-basis: 25vw;
-    border: 1px solid black;
+    border: 1px solid black; */
+    flex-grow: 1;
 
 }
 
-.options-list {
+/* .options-list {
   list-style: none;
   border: 1px solid black;
   height: 100%;
-  padding: 0;
+  padding: 0px;
   position: relative;
   bottom: 18px;
 }
 
 .options-item {
-  margin: auto;
  width: 100%;
- height: 33%;
- border: 1px solid black;
 }
 
 button, input {
@@ -49,14 +47,14 @@ button, input {
 }
 
 #withdrawview, #depositview {
-  height: 50%;
-}
+  /* height: 50%; */
+/* } */
 
-input {
+/* input {
   height: 50%;
   text-align: center;
 }
 
 #transactionslist {
   height: 100%;
-}
+} */ 

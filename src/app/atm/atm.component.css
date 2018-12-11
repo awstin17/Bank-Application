@@ -2,16 +2,24 @@
 .main {
   display: flex;
   flex-flow: row nowrap;
+  height: 300px;
 }
 
 .display {
-  flex-basis: 50vw;
+  flex-basis: 75vw;
   background-color: darkslategrey;
   color: white;
 }
 
 .options {
-  flex-basis: 50vw;
+  flex-grow: 1;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  /* flex-basis: 50vw; */
 }
 
 .options-list {
